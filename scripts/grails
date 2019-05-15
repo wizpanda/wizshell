@@ -1,0 +1,45 @@
+#!/usr/bin/env bash -e
+set -e
+
+# Handy script to auto use the Grails 3 version based on what is defined in the "gradle.properties". This script uses
+# the Grails installed by the famous SDKMan so it will look the Grails installation at "~/.sdkman/candidates/grails"
+# so only make sure the particular Grails version is installed using "sdk install grails <version>".
+#
+# The only thing to care about is that this script should be included first in the "PATH" before the
+# ".sdkman/candidates/grails/current" is included.
+#
+# Keeping the name of this script as "grails" so that you don't have to write anything else in order to use the auto
+# grails version select feature.
+
+grailsVersionToUse=""
+
+function parseGradleProperties() {
+    while read LINE
+    do
+        propertyName=${LINE%=*}
+        propertyValue=${LINE#*=}
+        if [[ ${propertyName} == "grailsVersion" ]]; then
+            grailsVersionToUse=${propertyValue}
+        fi
+    done < <(cat gradle.properties ) # Using process substitution
+}
+
+echo -e "${GREEN}➤  Using custom grails command script${NONE}"
+
+if [[ -f gradle.properties ]]; then
+    parseGradleProperties
+    echo -e "${BLUE}✓  Using grails version ${grailsVersionToUse}${NONE}\n"
+
+    desiredGrailsCommandPath=~/.sdkman/candidates/grails/${grailsVersionToUse}/bin/grails
+
+    # Check if particular Grails version is installed or not
+    if [[ -f ${desiredGrailsCommandPath} ]]; then
+        ${desiredGrailsCommandPath} $@
+    else
+        echo -e "${RED}✗  Grails ${grailsVersionToUse} is not installed. Please install using"\
+                "${YELLOW}sdk install grails ${grailsVersionToUse}${NONE}${NONE}"
+    fi
+else
+    echo -e "${RED}⚠  Current working directory is not a Grails 3 repository, using default Grails${NONE}\n"
+    ~/.sdkman/candidates/grails/current/bin/grails $@
+fi
