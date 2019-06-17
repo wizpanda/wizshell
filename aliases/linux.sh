@@ -7,6 +7,7 @@ alias p='cd -'          # Go to previous directory
 alias ll='ls -alh'
 alias op='xdg-open '    # Open a particular file or directory "op xyz.pdf"
 alias dbs='cd $WORK_DIRECTORY/database-backups'
+alias mkcd='foo(){ mkdir -p "$1"; cd "$1" }; foo '
 
 alias eb='exec bash'        # When someone is using zsh and want to switch to bash
 alias hi='history | grep'

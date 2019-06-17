@@ -17,7 +17,7 @@ export PATH="$WIZSHELL_DIRECTORY/scripts:$PATH"
 
 # Register all aliases
 
-aliasFiles=(cordova-ionic firebase git gradle grails linux mongodb mysql nginx npm react tomcat utils)
+aliasFiles=(cordova-ionic firebase git gradle grails linux mongodb mysql nginx npm react tomcat unix-network utils)
 
 for i in ${aliasFiles}; do
     . ${WIZSHELL_DIRECTORY}/aliases/${i}.sh

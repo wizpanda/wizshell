@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-alias ip='ifconfig -a | grep "168\|172"'
-alias js='ps -A | grep java'       # List all Java processes
-alias server='python -m SimpleHTTPServer'       # Start a Simple http server to serve files
-alias tz='sudo dpkg-reconfigure tzdata'      # Modify timezone
-alias tt="export PS1='\u@\h: '"              # Short the current path
+# Generate a random password "pass 10"
+alias pass="openssl rand -base64"
+# List all Java processes
+alias js='ps -A | grep java'
+# Start a Simple http server to serve files
+alias server='python -m SimpleHTTPServer'
+# Modify timezone
+alias tz='sudo dpkg-reconfigure tzdata'
+# Short the current path
+alias tt="export PS1='\u@\h: '"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
