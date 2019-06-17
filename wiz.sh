@@ -5,7 +5,7 @@ export NONE='\033[00m'
 export RED='\033[01;31m'
 export GREEN='\033[01;32m'
 export YELLOW='\033[01;33m'
-export BLUE='\e[0;36m'
+export BLUE='\033[0;36m'
 export BOLD='\033[1m'
 export UNDERLINE='\033[4m'
 

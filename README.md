@@ -12,8 +12,8 @@ This shell tool assumes that you keep all your repositories in a common director
 Before using wizshell for the first time, you need to set it up, **which is a few liner**:
 
 ```bash
-export WORK_DIRECTORY=/path/to/wizshell
-source ${WORK_DIRECTORY}/wiz.sh
+export WORK_DIRECTORY=/path/to/all/git/repositories
+source ${WORK_DIRECTORY}/wizshell/wiz.sh
 ```
 
 Add the above line either in your `~/.bashrc` or `~/.zshrc` file and reload it by `source ~/.bashrc` or `source ~/.zshrc` or open a new 
