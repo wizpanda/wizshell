@@ -9,6 +9,11 @@ if [[ ! ${BRANCH_OR_TAG} ]]; then
     exit 1
 fi
 
+# "gc android-create-channel origin2"
+if [[ $2 ]]; then
+    REMOTE_NAME=$2
+fi
+
 localReference=$(git rev-parse -q --verify ${BRANCH_OR_TAG}) || true
 
 # If there is no local specified branch or tag present

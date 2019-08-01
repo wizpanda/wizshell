@@ -1,22 +1,33 @@
 #!/usr/bin/env bash
 
-# Branch/tag/commit related related
-alias gr='git reset --hard'             ## Reset all un-staged commits
-alias gdc='git reset --soft HEAD~1'     ## Delete last commit
+# Branch/tag/commit related
+## Reset all changes
+alias gr='git reset --hard'
+## Delete last commit
+alias gdc='git reset --soft HEAD~1'
 
 alias gcp='git cherry-pick'
 alias gco='git checkout'
-alias gc='$WIZSHELL_DIRECTORY/private-scripts/git-checkout.sh'
-alias gdbrances='git branch --merged | grep -v \* | xargs git branch -D'    ## Delete all local branches that are merged
 alias gs='git status'
 alias gd='git diff --color'
 alias gdel='git push origin --delete'
+alias gsu='git submodule update --init'
 alias gm='git merge'
+
+# Tag related
 alias gt='git tag'
 alias gts='git tag --sort=creatordate'
+## Delete a tag locally and from remote if available
 alias gtd='$WIZSHELL_DIRECTORY/private-scripts/git-delete-tag.sh'
-alias gsu='git submodule update --init'
+
+# Branch related
 alias gb='git branch'
+## Delete the local branch and remote tracking branch (useful when remote branch was rebased)
+alias gbD='deleteBranch() { gb -D "$1" || true && gb -Dr origin/"$1" }; deleteBranch'
+## Delete all local branches that are merged
+alias gdbrances='git branch --merged | grep -v \* | xargs git branch -D'
+## Checkout to a new branch/tag (pull the branch/tag from remote if not available)
+alias gc='$WIZSHELL_DIRECTORY/private-scripts/git-checkout.sh'
 
 # Remote operation related
 alias gpush='$WIZSHELL_DIRECTORY/private-scripts/git-push-pull.sh push'
@@ -37,3 +48,8 @@ alias gl1="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset 
 alias gl2='git log --graph --pretty=oneline --abbrev-commit'
 alias gl3='git log --pretty=format:"%ad %h by %an, %s" --date=iso | sort -r | less'
 alias gl4='git log --all --decorate --oneline --graph'
+
+# Rebase related
+alias gbase='git rebase'
+alias gbasec='git rebase --continue'
+alias gbasea='git rebase --abort'
