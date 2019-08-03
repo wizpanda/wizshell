@@ -14,6 +14,12 @@ alias gdel='git push origin --delete'
 alias gsu='git submodule update --init'
 alias gm='git merge'
 
+# Cleaning related
+alias gclean='git clean -f'
+alias gdelrbr='git remote prune origin'
+## Clean everything - merged branches, untracked files, unstashed changes, merged remote branches
+alias grepoclean='gdbrances && gr && gclean && gdelrbr'
+
 # Tag related
 alias gt='git tag'
 alias gts='git tag --sort=creatordate'
@@ -25,7 +31,7 @@ alias gb='git branch'
 ## Delete the local branch and remote tracking branch (useful when remote branch was rebased)
 alias gbD='deleteBranch() { gb -D "$1" || true && gb -Dr origin/"$1" }; deleteBranch'
 ## Delete all local branches that are merged
-alias gdbrances='git branch --merged | grep -v \* | xargs git branch -D'
+alias gdelbr='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -D'
 ## Checkout to a new branch/tag (pull the branch/tag from remote if not available)
 alias gc='$WIZSHELL_DIRECTORY/private-scripts/git-checkout.sh'
 
