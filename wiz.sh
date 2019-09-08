@@ -17,11 +17,15 @@ export PATH="$WIZSHELL_DIRECTORY/scripts:$PATH"
 
 # Register all aliases
 
-aliasFiles=(cordova-ionic firebase git gradle grails linux mongodb mysql nginx npm react tomcat unix-network utils)
+aliasFiles=(angular cordova-ionic firebase git gradle grails linux mongodb mysql nginx npm react tomcat unix-network utils)
 
 for i in ${aliasFiles}; do
     . ${WIZSHELL_DIRECTORY}/aliases/${i}.sh
 done
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    . ${WIZSHELL_DIRECTORY}/aliases/mac.sh
+fi
 
 # Make sure database-directory exists
 mkdir -p ${DB_BACKUP_DIRECTORY}
