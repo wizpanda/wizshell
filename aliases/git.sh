@@ -22,13 +22,15 @@ alias grepoclean='gr && gclean && gdelrbr'
 
 # Tag related
 alias gt='git tag'
-alias gts='git tag --sort=creatordate'
+#alias gts='git tag --sort=creatordate'
+alias gts='git for-each-ref --format="%(color:bold yellow)%(refname:short) %(color:bold blue)%(creatordate) %(color:bold red)%(*authorname)" refs/tags'
 ## Delete a tag locally and from remote if available
 alias gtd='$WIZSHELL_DIRECTORY/private-scripts/git-delete-tag.sh'
 
 # Branch related
 alias gb='git branch'
 ## Delete the local branch and remote tracking branch (useful when remote branch was rebased)
+# shellcheck disable=SC2142
 alias gbD='deleteBranch() { gb -D "$1" || true && gb -Dr origin/"$1" }; deleteBranch'
 ## Delete all local branches that are merged
 alias gdelbr='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -D'
