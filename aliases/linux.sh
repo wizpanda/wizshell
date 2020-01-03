@@ -24,3 +24,9 @@ alias ws='subl $WORK_DIRECTORY/wizshell'
 
 alias bashr='source ~/.bashrc'
 alias zshr='source ~/.zshrc'
+
+# https://github.com/jocelynmallon/zshmarks
+alias g="jump"
+alias s='bookmark'
+alias d='deletemark'
+alias l='showmarks'
