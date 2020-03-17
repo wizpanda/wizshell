@@ -10,5 +10,11 @@ alias crb='cr build'
 alias i='ionic'
 alias ic='i cordova'
 alias is='i serve'
-alias iplat='ic cordova platform'
-alias iplug='ic cordova plugin'
+
+alias icpt='ionic cordova platform'
+alias icpta='ionic cordova platform add'
+alias icptr='ionic cordova platform remove'
+
+alias icpl='ionic cordova plugin'
+alias icpla='ionic cordova plugin add'
+alias icplr='ionic cordova plugin remove'
