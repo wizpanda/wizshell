@@ -11,6 +11,8 @@ if [[ $2 == "-f" ]]; then
     if [[ $3 ]]; then
         remoteToUse=$3
     fi
+elif [[ ! -z $2 ]]; then
+    remoteToUse=$2
 fi
 
 if [[ $3 == "-f" ]]; then
@@ -18,6 +20,6 @@ if [[ $3 == "-f" ]]; then
     remoteToUse=$2
 fi
 
-echo -e "${GREEN}git $1 ${remoteToUse} ${flags}${currentBranchName} ${NONE}"
+echo -e "${GREEN}git $1 ${remoteToUse} ${flags} ${currentBranchName}${NONE}"
 
 git $1 ${remoteToUse} ${flags} ${currentBranchName}
