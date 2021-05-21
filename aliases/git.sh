@@ -13,6 +13,9 @@ alias gd='git diff --color'
 alias gdel='git push origin --delete'
 alias gsu='git submodule update --init'
 alias gm='git merge'
+alias gcm='git commit -m'
+alias ga='git add'
+alias gplo='git push origin'
 
 # Cleaning related
 alias gclean='git clean -fd'
