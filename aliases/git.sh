@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Use base from https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git#aliases
+
 # Branch/tag/commit related
 ## Reset all changes including the untracked changes
 alias gr='git reset --hard && git clean -fd'
@@ -34,7 +36,7 @@ alias gb='git branch'
 # shellcheck disable=SC2142
 alias gbD='deleteBranch() { gb -D "$1" || true && gb -Dr origin/"$1" }; deleteBranch'
 ## Delete all local branches that are merged
-alias gdelbr='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -D'
+alias gdelbr='git branch --merged | egrep -v "(^\*|master|main|dev)" | xargs git branch -D'
 ## Checkout to a new branch/tag (pull the branch/tag from remote if not available)
 alias gc='$WIZSHELL_DIRECTORY/private-scripts/git-checkout.sh'
 
