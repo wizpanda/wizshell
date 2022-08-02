@@ -2,7 +2,7 @@
 
 alias nst='nest'
 
-# region "next new" related aliases
+# region "nest new" related aliases
 alias nstn='nest n'
 alias nstna='nest n app'
 alias nstnlb='nest n library'

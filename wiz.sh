@@ -24,6 +24,17 @@ for i in "${aliasFiles[@]}"; do
     . ${WIZSHELL_DIRECTORY}/aliases/"$i".sh
 done
 
+# Print all aliases
+export function all() {
+    for i in "${aliasFiles[@]}"; do
+        echo -e "\n${GREEN}${i} aliases${NONE}"
+        # Install https://github.com/sharkdp/bat
+        bat --paging=never ${WIZSHELL_DIRECTORY}/aliases/"$i".sh
+    done
+
+    echo -e "\n${GREEN}https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/git/README.md${NONE}"
+}
+
 if [[ "$(uname)" == "Darwin" ]]; then
     . ${WIZSHELL_DIRECTORY}/aliases/mac.sh
 fi

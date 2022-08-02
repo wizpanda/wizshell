@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-alias m='mongo'
-alias md='mongodump --db'
-alias mr='mongorestore'
+alias msh='mongosh'
+alias mdump='mongodump --db'
+alias mrst='mongorestore'

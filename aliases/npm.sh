@@ -14,3 +14,4 @@ alias nrs='nr start'
 
 # Version related
 alias nver='npm version'
+alias npub='npm publish --access public'
