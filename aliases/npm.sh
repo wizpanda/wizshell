@@ -14,4 +14,7 @@ alias nrs='nr start'
 
 # Version related
 alias nver='npm version'
+alias nverp='nver patch -m "release: v%s" -f'
+alias nvermi='nver minor -m "release: v%s" -f'
+alias nvermi='nver major -m "release: v%s" -f'
 alias npub='npm publish --access public'
