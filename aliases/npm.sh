@@ -10,6 +10,9 @@ alias nx='npx'
 
 # Run related
 alias nr='npm run'
+alias nri='npm run integrity'
+alias nrl='npm run lint'
+alias nrt='npm run test'
 alias nrs='nr start'
 
 # Version related

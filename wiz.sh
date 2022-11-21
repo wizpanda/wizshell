@@ -18,7 +18,7 @@ export PATH="$WIZSHELL_DIRECTORY/scripts:$PATH"
 # Register all aliases
 
 aliasFiles=(angular android cordova-ionic ide firebase git gradle grails linux mongodb mysql nest nginx npm react
-tomcat unix-network utils)
+tomcat unix-network utils aws)
 
 for i in "${aliasFiles[@]}"; do
     . ${WIZSHELL_DIRECTORY}/aliases/"$i".sh
