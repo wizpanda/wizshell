@@ -11,4 +11,4 @@ alias server3='python3 -m http.server 8000'
 alias tz='sudo dpkg-reconfigure tzdata'
 # Short the current path
 alias tt="export PS1='\u@\h: '"
-alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+alias tree1="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"

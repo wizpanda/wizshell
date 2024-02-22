@@ -14,7 +14,6 @@ alias gs='git status'
 alias gd='git diff --color'
 alias gdel='git push origin --delete'
 alias gsu='git submodule update --init'
-alias gm='git merge'
 
 # Cleaning related
 alias gclean='git clean -fd'
@@ -48,10 +47,7 @@ alias gremotes='git remote -v'
 alias gra='git remote add'
 
 # Stash related
-alias gstash='git stash save'
-alias gpop='git stash pop'
-alias grestore='git stash apply'
-alias gstashes='git stash list'
+alias gstl='git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cD) %C(bold blue)<%an>%C(reset)"'
 
 # Log related
 alias gl='git log'
