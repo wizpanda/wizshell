@@ -44,7 +44,6 @@ alias gpush='$WIZSHELL_DIRECTORY/private-scripts/git-push-pull.sh push'
 alias gpull='$WIZSHELL_DIRECTORY/private-scripts/git-push-pull.sh pull'
 alias gpta='git push --tags'
 alias gremotes='git remote -v'
-alias gra='git remote add'
 
 # Stash related
 alias gstl='git stash list --pretty=format:"%C(red)%h%C(reset) - %C(dim yellow)(%C(bold magenta)%gd%C(dim yellow))%C(reset) %<(70,trunc)%s %C(green)(%cD) %C(bold blue)<%an>%C(reset)"'

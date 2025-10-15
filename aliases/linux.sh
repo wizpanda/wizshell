@@ -20,7 +20,6 @@ alias v='vim'
 alias rc='vim ~/.bashrc'
 alias zc='vim ~/.zshrc'
 alias al='vim ~/.bash_aliases'
-alias ws='subl $WORK_DIRECTORY/wizshell'
 
 alias bashr='source ~/.bashrc'
 alias zshr='source ~/.zshrc'
